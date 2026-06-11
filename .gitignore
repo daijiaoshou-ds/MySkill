@@ -1,0 +1,24 @@
+# Claude
+.claude/
+
+# Python venv
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Package metadata
+*.egg-info/
+*.egg
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
