@@ -273,7 +273,7 @@ python audit-basis-sense/scripts/analyze_sheet_structure.py <path_to_xlsx>
 
 **功能**：读取 .xlsx 文件，输出结构 JSON。
 
-**依赖**：`openpyxl`（`pip install openpyxl`）
+**依赖**：Python 3 标准库，无需安装第三方包。
 
 **输出字段说明**：
 
@@ -294,9 +294,9 @@ python audit-basis-sense/scripts/analyze_sheet_structure.py <path_to_xlsx>
 ## 8. Gotchas
 
 - **列名有空格/换行**：脚本会自动 trim，但原始列名可能不规范。分析前建议用户确认列名。
-- **合并单元格的列头**：openpyxl 读取合并单元格时可能只取左上角的值。如果列名不完整，需要用户手动告知。
+- **合并单元格的列头**：合并单元格的值只存在于左上角单元格，其余为空白。如果列名不完整（如只有第一列有值），需要用户手动告知完整列名。
 - **空 sheet**：空 sheet 没有列名，聚类时会自动忽略。
-- **hidden sheets**：openpyxl 会读取隐藏 sheet。如果用户说"只有 N 个 sheet"，但脚本输出更多，检查是否有隐藏 sheet。
+- **Hidden sheets**：脚本会读取所有 sheet（包括隐藏 sheet）。如果用户说"只有 N 个 sheet"，但脚本输出更多，检查是否有隐藏 sheet。
 - **70% 重叠率不是绝对规则**：聚类结果仅供参考。AI 应结合审计语义判断——即使脚本没聚类在一起，如果语义上属于同一类底稿，仍应提出融合建议。
 - **基变换不适合所有场景**：如果多个 sheet 的结构确实完全不同（一个是序时账、一个是科目余额表），则不应强行合并。
 - **信息熵不会降到零**：合并后仍需认知判断（检查异常行），审计 O 从 O(N) 降到 O(K)，K 是异常行数，通常远小于 N。
@@ -307,7 +307,6 @@ python audit-basis-sense/scripts/analyze_sheet_structure.py <path_to_xlsx>
 
 | 症状 | 修复 |
 |------|------|
-| `ModuleNotFoundError: openpyxl` | `pip install openpyxl` |
 | 脚本报 "file not found" | 确认文件路径正确；如果路径含空格，用引号包裹 |
 | JSON 中列名为空 | Excel 第一行可能是空行——手动指定数据起始行或清理空行 |
 | 聚类结果为空（没有 identical_structure_groups） | 所有 sheet 结构差异都 >20%，可能是确实没有融合机会，也可能是列名不一致（如"金额" vs "金额(元)"） |
