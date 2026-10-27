@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>毛利率归因 · 上期 → 本期</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="brand-copy">
+      <div class="brand-title">毛利率归因</div>
+      <div class="brand-sub">上期 → 本期 · 只做数据归因</div>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button class="link" id="btn-method">口径说明</button>
+    <button class="btn" id="btn-export-all" title="页面 2 位小数；导出主明细 6 位小数；全精度复核底稿在“口径说明”里下载"><span class="btn-ico">↓</span>导出明细</button>
+  </div>
+</header>
+
+<main class="page">
+  <section class="hero">
+    <div class="hero-main">
+      <div class="hero-kicker"><span class="eyebrow">MARGIN ATTRIBUTION</span> 数据归因 · <span id="period-pill">上期 → 本期</span></div>
+      <h1>毛利率为什么变了？</h1>
+      <p class="hero-line" id="hero-line"></p>
+      <p class="hero-note">只回答哪个对象 / 订单、哪一项拉力差了多少；业务原因由你继续查。</p>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-k">毛利率变化</div>
+      <div class="hero-stat-v" id="hero-delta"></div>
+      <div class="hero-stat-sub" id="hero-sub"></div>
+      <div class="hero-pills" id="hero-pills"></div>
+    </div>
+  </section>
+
+  <section class="card dashboard-card" id="overview-section">
+    <div class="section-head">
+      <div>
+        <h2><span class="sec-no">一</span>经营大盘</h2>
+        <p>先看总量与效率，再看本期毛利率被价格、成本各拉了多少。</p>
+      </div>
+      <div class="head-actions">
+        <span class="unit-badge">总额单位 · 万元</span>
+        <button class="section-toggle" data-section-toggle aria-expanded="true">收起 ⌃</button>
+      </div>
+    </div>
+    <div class="kpi-grid" id="overview-kpis"></div>
+    <div class="overview-grid" id="overview-grid"></div>
+    <div class="footnote">拉力合计 = 毛利率变化；价格拉力 + 成本拉力 = 拉力合计。上期为基期，拉力为 0。总额由元换算为万元，单价与单位成本保留元；导出明细保留原始元值，便于逐行复核。</div>
+  </section>
+
+  <section class="card conclusion-card" id="conclusion-section">
+    <div class="section-head">
+      <div>
+        <h2><span class="sec-no">二</span>毛利率变动分析</h2>
+        <p>先看谁拉高、谁拉低，再看这些客户里哪几张订单贡献最大。</p>
+      </div>
+      <div class="head-actions">
+        <span class="conclusion-tag">PARETO 80% · 主维度≤7 / 订单≤15</span>
+        <button class="section-toggle" data-section-toggle aria-expanded="true">收起 ⌃</button>
+      </div>
+    </div>
+    <div class="conclusion-hero">
+      <div class="conclusion-kicker">本期 vs 上期 · 客户与订单</div>
+      <h3 id="conclusion-title"></h3>
+      <p id="conclusion-lead"></p>
+    </div>
+    <div class="conclusion-ledger" id="conclusion-grid"></div>
+    <div class="conclusion-boundary" id="conclusion-boundary"></div>
+  </section>
+
+  <section class="card" id="locate-section">
+    <div class="section-head">
+      <div>
+        <h2><span class="sec-no">三</span>具体变动数据</h2>
+        <p>按当前维度汇总拉力差值；正向一组、负向一组，不混排。</p>
+      </div>
+      <div class="head-actions">
+        <div class="tabs" id="dim-tabs">
+          <button data-dim="customer" class="active">客户</button>
+          <button data-dim="product">产品</button>
+        </div>
+        <button class="link" id="btn-export-dim">导出本表</button>
+        <button class="section-toggle" data-section-toggle aria-expanded="true">收起 ⌃</button>
+      </div>
+    </div>
+    <div class="loc-summary" id="loc-summary"></div>
+    <div class="dim-alert" id="dim-alert" hidden></div>
+    <div class="loc-tools">
+      <input id="search" type="search" placeholder="搜索客户…" autocomplete="off">
+      <span class="loc-meta" id="loc-meta"></span>
+      <span class="loc-hint">点一行，订单明细直接展开在这一行下面</span>
+    </div>
+    <div class="loc-explain">毛利率变化是对象自身的变化；拉力差值是它对总毛利率的贡献（已考虑体量）。</div>
+    <div id="loc-groups"></div>
+  </section>
+
+  <section class="card support-card" id="support-section">
+    <div class="section-head">
+      <div>
+        <h2><span class="sec-no">四</span>毛利率构成分析</h2>
+        <p>按所选期间看毛利由谁构成：对象、收入、成本、毛利率、收入占比和拉力，全部列示。</p>
+      </div>
+      <div class="head-actions">
+        <div class="tabs" id="support-dim-tabs"></div>
+        <div class="tabs tabs-sm" id="support-period">
+          <button data-support-period="base">上期</button>
+          <button data-support-period="current" class="active">本期</button>
+        </div>
+        <button class="fold-toggle" id="support-fold" aria-pressed="false" title="把 |拉力| < 0.01pp 的对象合并为一行，合计不变">折叠 &lt;0.01pp</button>
+        <button class="section-toggle" data-section-toggle aria-expanded="true">收起 ⌃</button>
+      </div>
+    </div>
+    <div class="support-equation" id="support-equation"></div>
+    <div class="loc-summary" id="support-summary"></div>
+    <div class="loc-explain">金额单位：万元。拉力是所选期间的拉力水平，不是两期差值；点一行展开该对象的订单明细。</div>
+    <div id="support-groups"></div>
+    <div class="support-note" id="support-note"></div>
+  </section>
+
+  <section class="card" id="quad-section">
+    <div class="section-head">
+      <div>
+        <h2><span class="sec-no">五</span>二维象限</h2>
+        <p id="quad-desc">X = 单价，Y = 单位成本；单期分布可切上期 / 本期。气泡大小=所选期间收入，颜色=两期拉力差值方向。</p>
+      </div>
+      <div class="head-actions">
+        <div class="tabs" id="quad-tabs">
+          <button data-level="order">订单</button>
+          <button data-level="customer" class="active">客户</button>
+          <button data-level="product">产品</button>
+        </div>
+        <button class="section-toggle" data-section-toggle aria-expanded="true">收起 ⌃</button>
+      </div>
+    </div>
+    <div class="quad-toolbar">
+      <div class="quad-title" id="quad-title">客户象限图</div>
+      <div class="quad-controls">
+        <div class="tabs tabs-sm" id="quad-mode">
+          <button data-mode="current" class="active">单期分布</button>
+          <button data-mode="migration">两期迁移</button>
+        </div>
+        <div class="quad-period-group" id="quad-period-group">
+          <span class="quad-period-label">期间</span>
+          <div class="tabs tabs-sm" id="quad-period">
+            <button data-period="base">上期</button>
+            <button data-period="current" class="active">本期</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-hint">左右滑动查看完整象限</div>
+    <div class="quad-wrap" id="quad-chart"></div>
+    <div class="quad-foot">
+      <div class="quad-legend" id="quad-legend"></div>
+      <div class="quad-note" id="quad-note"></div>
+    </div>
+    <div id="quad-table"></div>
+  </section>
+
+  <footer class="footer">
+    <div>只做数据归因：这里只回答“哪个对象、哪张订单、哪一项拉力差了多少”。业务原因由你继续查。</div>
+    <div id="source">数据：当前数据</div>
+  </footer>
+</main>
+
+<div class="modal-mask" id="modal-mask"></div>
+<div class="modal" id="method-modal" role="dialog" aria-modal="true" aria-label="口径说明">
+  <div class="modal-head"><h2>口径说明</h2><button class="icon-btn" id="btn-close-method" aria-label="关闭">×</button></div>
+  <div class="modal-body" id="method-body"></div>
+</div>
+
+<div class="drawer-mask" id="drawer-mask"></div>
+<aside class="drawer" id="order-drawer" aria-hidden="true" aria-label="订单级明细">
+  <div class="drawer-head">
+    <div>
+      <div class="drawer-kicker">点详情 · 订单下钻</div>
+      <h3 id="drawer-title"></h3>
+    </div>
+    <button class="icon-btn" id="drawer-close" aria-label="关闭">×</button>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+
+<div class="tooltip" id="tooltip"></div>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

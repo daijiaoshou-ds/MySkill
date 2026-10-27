@@ -1,0 +1,53 @@
+{
+  "source": "case/case1.xlsx",
+  "sheet": "23-24年",
+  "header_row": 0,
+  "period": {
+    "column": "所属期间",
+    "base": "2023年度",
+    "current": "2024年度",
+    "granularity": "raw"
+  },
+  "order": {
+    "column": "销售订单号",
+    "label": "订单"
+  },
+  "product": {
+    "column": "产品编码",
+    "label": "产品"
+  },
+  "customer": {
+    "column": "客户名称",
+    "label": "客户"
+  },
+  "qty": {
+    "column": "数量"
+  },
+  "revenue": {
+    "column": "销售收入"
+  },
+  "cost": {
+    "column": "销售成本"
+  },
+  "unit_price": {
+    "column": "单位售价"
+  },
+  "dimensions": [
+    {
+      "key": "channel",
+      "label": "内销/外销",
+      "column": "内销/外销"
+    },
+    {
+      "key": "trade",
+      "label": "贸易方式",
+      "column": "贸易方式（外销）"
+    }
+  ],
+  "cost_components": [
+    "销售成本-直接材料",
+    "销售成本-直接人工",
+    "销售成本-制造费用"
+  ],
+  "primary_dim": "customer"
+}

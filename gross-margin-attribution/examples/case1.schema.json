@@ -1,0 +1,866 @@
+{
+  "source": "case/case1.xlsx",
+  "file_type": "xlsx",
+  "sheet": "23-24年",
+  "sheet_names": [
+    "23-24年"
+  ],
+  "header_row": 0,
+  "header": [
+    "所属期间",
+    "销售订单号",
+    "产品编码",
+    "客户名称",
+    "数量",
+    "单位售价",
+    "销售收入",
+    "销售成本",
+    "内销/外销",
+    "销售季节",
+    "销售模式",
+    "贸易方式（外销）",
+    "贸易方式（根据合同条款）",
+    "销售成本-直接材料",
+    "销售成本-直接人工",
+    "销售成本-制造费用"
+  ],
+  "row_count": 6738,
+  "period_values": [
+    "2023年度",
+    "2024年度"
+  ],
+  "columns": [
+    {
+      "index": 0,
+      "name": "所属期间",
+      "type": "string",
+      "present": 6738,
+      "missing": 0,
+      "unique": 2,
+      "unique_ratio": 0.0003,
+      "samples": [
+        "2023年度",
+        "2024年度"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false
+    },
+    {
+      "index": 1,
+      "name": "销售订单号",
+      "type": "string",
+      "present": 6738,
+      "missing": 0,
+      "unique": 1881,
+      "unique_ratio": 0.2792,
+      "samples": [
+        "订单1",
+        "订单270",
+        "订单540",
+        "订单879",
+        "订单1149",
+        "订单1419",
+        "订单1687",
+        "订单1956"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false
+    },
+    {
+      "index": 2,
+      "name": "产品编码",
+      "type": "string",
+      "present": 6738,
+      "missing": 0,
+      "unique": 1685,
+      "unique_ratio": 0.2501,
+      "samples": [
+        "产品1",
+        "产品243",
+        "产品483",
+        "产品799",
+        "产品1129",
+        "产品1377",
+        "产品1622",
+        "产品1863"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false
+    },
+    {
+      "index": 3,
+      "name": "客户名称",
+      "type": "string",
+      "present": 6738,
+      "missing": 0,
+      "unique": 32,
+      "unique_ratio": 0.0047,
+      "samples": [
+        "客户1",
+        "客户5",
+        "客户10",
+        "客户14",
+        "客户19",
+        "客户23",
+        "客户28",
+        "客户32"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false
+    },
+    {
+      "index": 4,
+      "name": "数量",
+      "type": "number",
+      "present": 6738,
+      "missing": 0,
+      "unique": 989,
+      "unique_ratio": 0.1468,
+      "samples": [
+        "95.0",
+        "14.0",
+        "506.0",
+        "1496.0",
+        "1238.0",
+        "274.0",
+        "598.0",
+        "169.0"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false,
+      "min": -242.0,
+      "max": 84000.0
+    },
+    {
+      "index": 5,
+      "name": "单位售价",
+      "type": "number",
+      "present": 6738,
+      "missing": 0,
+      "unique": 2432,
+      "unique_ratio": 0.3609,
+      "samples": [
+        "562.08",
+        "392.36",
+        "302.23",
+        "6196.74",
+        "489.44",
+        "460.29",
+        "242.77",
+        "57.4"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false,
+      "min": -75096.24,
+      "max": 83360.78
+    },
+    {
+      "index": 6,
+      "name": "销售收入",
+      "type": "number",
+      "present": 6738,
+      "missing": 0,
+      "unique": 5476,
+      "unique_ratio": 0.8127,
+      "samples": [
+        "53397.5804315636",
+        "29146.56054",
+        "199207.054251489",
+        "3170.5802114994",
+        "39145.0484012027",
+        "96142.95",
+        "331.507119122685",
+        "57400.902"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false,
+      "min": -424423.664072752,
+      "max": 2218415.24736
+    },
+    {
+      "index": 7,
+      "name": "销售成本",
+      "type": "number",
+      "present": 6738,
+      "missing": 0,
+      "unique": 6039,
+      "unique_ratio": 0.8963,
+      "samples": [
+        "34799.6351472628",
+        "2728.45280430754",
+        "192.078091682266",
+        "7384.83628373152",
+        "25300.7248192812",
+        "2212.07618708614",
+        "69016.1820954695",
+        "79186.13"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false,
+      "min": -216143.883789875,
+      "max": 1299522.04200629
+    },
+    {
+      "index": 8,
+      "name": "内销/外销",
+      "type": "string",
+      "present": 6738,
+      "missing": 0,
+      "unique": 2,
+      "unique_ratio": 0.0003,
+      "samples": [
+        "外销",
+        "内销"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false
+    },
+    {
+      "index": 9,
+      "name": "销售季节",
+      "type": "string",
+      "present": 6738,
+      "missing": 0,
+      "unique": 4,
+      "unique_ratio": 0.0006,
+      "samples": [
+        "第1季度",
+        "第2季度",
+        "第3季度",
+        "第4季度"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false
+    },
+    {
+      "index": 10,
+      "name": "销售模式",
+      "type": "string",
+      "present": 6738,
+      "missing": 0,
+      "unique": 1,
+      "unique_ratio": 0.0001,
+      "samples": [
+        "直接销售"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false
+    },
+    {
+      "index": 11,
+      "name": "贸易方式（外销）",
+      "type": "string",
+      "present": 6484,
+      "missing": 254,
+      "unique": 5,
+      "unique_ratio": 0.0008,
+      "samples": [
+        "FOB",
+        "EXW",
+        "FCA",
+        "DAP",
+        "DDP"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false
+    },
+    {
+      "index": 12,
+      "name": "贸易方式（根据合同条款）",
+      "type": "string",
+      "present": 6520,
+      "missing": 218,
+      "unique": 3,
+      "unique_ratio": 0.0005,
+      "samples": [
+        "FOB",
+        "FCA",
+        "EXW"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false
+    },
+    {
+      "index": 13,
+      "name": "销售成本-直接材料",
+      "type": "number",
+      "present": 6738,
+      "missing": 0,
+      "unique": 5939,
+      "unique_ratio": 0.8814,
+      "samples": [
+        "31150.861",
+        "1571.91",
+        "57146.6696908181",
+        "37407.975373386",
+        "323.147038793103",
+        "56827.5051020409",
+        "9427.65390818234",
+        "66213.7339790881"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false,
+      "min": -165212.390068556,
+      "max": 1091455.51858481
+    },
+    {
+      "index": 14,
+      "name": "销售成本-直接人工",
+      "type": "number",
+      "present": 6738,
+      "missing": 0,
+      "unique": 5514,
+      "unique_ratio": 0.8183,
+      "samples": [
+        "1786.437",
+        "5325.19219348338",
+        "602.140580769231",
+        "476.226915801473",
+        "32.56344",
+        "3170.98",
+        "1545.98690265487",
+        "6642.10081443602"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false,
+      "min": -26686.3795644692,
+      "max": 154511.041759757
+    },
+    {
+      "index": 15,
+      "name": "销售成本-制造费用",
+      "type": "number",
+      "present": 6738,
+      "missing": 0,
+      "unique": 6173,
+      "unique_ratio": 0.9161,
+      "samples": [
+        "1862.33714726281",
+        "4088.10658758079",
+        "128.309823342006",
+        "10809.4629469035",
+        "2300.14445706028",
+        "14234.3617498322",
+        "4310.4164862781",
+        "6330.29520647584"
+      ],
+      "sampled": false,
+      "sampledRows": 6738,
+      "totalRows": 6738,
+      "uniqueIsLowerBound": false,
+      "min": -245045.855066517,
+      "max": 223942.124787121
+    }
+  ],
+  "suggested_mapping": {
+    "period": {
+      "column": "所属期间",
+      "confidence": "high",
+      "reason": "列名命中关键词",
+      "base": "2023年度",
+      "current": "2024年度"
+    },
+    "order": {
+      "column": "销售订单号",
+      "confidence": "high",
+      "reason": "列名命中关键词"
+    },
+    "product": {
+      "column": "产品编码",
+      "confidence": "high",
+      "reason": "列名命中关键词"
+    },
+    "customer": {
+      "column": "客户名称",
+      "confidence": "high",
+      "reason": "列名命中关键词"
+    },
+    "qty": {
+      "column": "数量",
+      "confidence": "high",
+      "reason": "列名命中关键词"
+    },
+    "revenue": {
+      "column": "销售收入",
+      "confidence": "high",
+      "reason": "列名命中关键词"
+    },
+    "cost": {
+      "column": "销售成本",
+      "confidence": "high",
+      "reason": "列名命中关键词"
+    },
+    "unit_price": {
+      "column": "单位售价",
+      "confidence": "high",
+      "reason": "列名命中关键词"
+    },
+    "dimensions": [
+      {
+        "key": "season",
+        "label": "销售季节",
+        "column": "销售季节",
+        "role": "slice",
+        "confidence": "high",
+        "recommendation": "recommended",
+        "reasons": [
+          "时间切片维度：只做汇总和导出，不做象限 / 迁移"
+        ],
+        "metrics": {
+          "nCategories": 4,
+          "missingRate": 0.0,
+          "topShareByRows": 0.2763,
+          "minorityShareByRows": 0.7237,
+          "effectiveCategoriesByRows": 3.956,
+          "uniqueRatio": 0.0006,
+          "topShareByRevenue": 0.2909,
+          "minorityShareByRevenue": 0.7091,
+          "effectiveCategoriesByRevenue": 3.918,
+          "weightedMarginDispersionByRevenue": 0.017119,
+          "periodsByRevenue": {
+            "2023年度": {
+              "nCategories": 4,
+              "topShare": 0.29089217599262407,
+              "minorityShare": 0.7091078240073759,
+              "effectiveCategories": 3.9372465088934367,
+              "weightedMarginDispersion": 0.017118864788165336
+            },
+            "2024年度": {
+              "nCategories": 4,
+              "topShare": 0.27634256363192833,
+              "minorityShare": 0.7236574363680717,
+              "effectiveCategories": 3.9176593312585766,
+              "weightedMarginDispersion": 0.014842318772479622
+            }
+          }
+        }
+      },
+      {
+        "key": "trade_mode_contract",
+        "label": "贸易方式（根据合同条款）",
+        "column": "贸易方式（根据合同条款）",
+        "role": "entity",
+        "confidence": "medium",
+        "recommendation": "needs_reason",
+        "reasons": [
+          "列名命中分类维度关键词",
+          "缺失 3.2% 的行会归入“未填”",
+          "2023年度 最大类收入占比 77.0%，需要一句业务理由",
+          "2023年度 收入有效类目数偏低 1.60",
+          "2024年度 收入有效类目数偏低 2.24"
+        ],
+        "metrics": {
+          "nCategories": 3,
+          "missingRate": 0.0324,
+          "topShareByRows": 0.8041,
+          "minorityShareByRows": 0.1959,
+          "effectiveCategoriesByRows": 1.496,
+          "uniqueRatio": 0.0005,
+          "topShareByRevenue": 0.7704,
+          "minorityShareByRevenue": 0.2296,
+          "effectiveCategoriesByRevenue": 1.596,
+          "weightedMarginDispersionByRevenue": 0.027782,
+          "periodsByRevenue": {
+            "2023年度": {
+              "nCategories": 4,
+              "topShare": 0.7704050911400309,
+              "minorityShare": 0.22959490885996914,
+              "effectiveCategories": 1.5959209206605611,
+              "weightedMarginDispersion": 0.027781550865551563
+            },
+            "2024年度": {
+              "nCategories": 4,
+              "topShare": 0.5240196665522938,
+              "minorityShare": 0.4759803334477062,
+              "effectiveCategories": 2.2401987451274716,
+              "weightedMarginDispersion": 0.014115516467066838
+            }
+          }
+        }
+      }
+    ],
+    "primary_dim": "customer",
+    "dimension_candidates": [
+      {
+        "key": "season",
+        "label": "销售季节",
+        "column": "销售季节",
+        "role": "slice",
+        "confidence": "high",
+        "recommendation": "recommended",
+        "reasons": [
+          "时间切片维度：只做汇总和导出，不做象限 / 迁移"
+        ],
+        "metrics": {
+          "nCategories": 4,
+          "missingRate": 0.0,
+          "topShareByRows": 0.2763,
+          "minorityShareByRows": 0.7237,
+          "effectiveCategoriesByRows": 3.956,
+          "uniqueRatio": 0.0006,
+          "topShareByRevenue": 0.2909,
+          "minorityShareByRevenue": 0.7091,
+          "effectiveCategoriesByRevenue": 3.918,
+          "weightedMarginDispersionByRevenue": 0.017119,
+          "periodsByRevenue": {
+            "2023年度": {
+              "nCategories": 4,
+              "topShare": 0.29089217599262407,
+              "minorityShare": 0.7091078240073759,
+              "effectiveCategories": 3.9372465088934367,
+              "weightedMarginDispersion": 0.017118864788165336
+            },
+            "2024年度": {
+              "nCategories": 4,
+              "topShare": 0.27634256363192833,
+              "minorityShare": 0.7236574363680717,
+              "effectiveCategories": 3.9176593312585766,
+              "weightedMarginDispersion": 0.014842318772479622
+            }
+          }
+        }
+      },
+      {
+        "key": "trade_mode_contract",
+        "label": "贸易方式（根据合同条款）",
+        "column": "贸易方式（根据合同条款）",
+        "role": "entity",
+        "confidence": "medium",
+        "recommendation": "needs_reason",
+        "reasons": [
+          "列名命中分类维度关键词",
+          "缺失 3.2% 的行会归入“未填”",
+          "2023年度 最大类收入占比 77.0%，需要一句业务理由",
+          "2023年度 收入有效类目数偏低 1.60",
+          "2024年度 收入有效类目数偏低 2.24"
+        ],
+        "metrics": {
+          "nCategories": 3,
+          "missingRate": 0.0324,
+          "topShareByRows": 0.8041,
+          "minorityShareByRows": 0.1959,
+          "effectiveCategoriesByRows": 1.496,
+          "uniqueRatio": 0.0005,
+          "topShareByRevenue": 0.7704,
+          "minorityShareByRevenue": 0.2296,
+          "effectiveCategoriesByRevenue": 1.596,
+          "weightedMarginDispersionByRevenue": 0.027782,
+          "periodsByRevenue": {
+            "2023年度": {
+              "nCategories": 4,
+              "topShare": 0.7704050911400309,
+              "minorityShare": 0.22959490885996914,
+              "effectiveCategories": 1.5959209206605611,
+              "weightedMarginDispersion": 0.027781550865551563
+            },
+            "2024年度": {
+              "nCategories": 4,
+              "topShare": 0.5240196665522938,
+              "minorityShare": 0.4759803334477062,
+              "effectiveCategories": 2.2401987451274716,
+              "weightedMarginDispersion": 0.014115516467066838
+            }
+          }
+        }
+      },
+      {
+        "key": "trade_mode_export",
+        "label": "贸易方式（外销）",
+        "column": "贸易方式（外销）",
+        "role": "entity",
+        "confidence": "low",
+        "recommendation": "not_recommended",
+        "reasons": [
+          "列名命中分类维度关键词",
+          "缺失 3.8% 的行会归入“未填”",
+          "最大类按行数占 94.4%，接近单极",
+          "有效类目数仅 1.12",
+          "与“贸易方式（根据合同条款）”近似重复，保留缺失更少的列"
+        ],
+        "metrics": {
+          "nCategories": 5,
+          "missingRate": 0.0377,
+          "topShareByRows": 0.9443,
+          "minorityShareByRows": 0.0557,
+          "effectiveCategoriesByRows": 1.118,
+          "uniqueRatio": 0.0008,
+          "topShareByRevenue": 0.9456,
+          "minorityShareByRevenue": 0.0544,
+          "effectiveCategoriesByRevenue": 1.116,
+          "weightedMarginDispersionByRevenue": 0.007808,
+          "periodsByRevenue": {
+            "2023年度": {
+              "nCategories": 5,
+              "topShare": 0.9455899427962158,
+              "minorityShare": 0.05441005720378422,
+              "effectiveCategories": 1.116317492702228,
+              "weightedMarginDispersion": 0.007808043142802947
+            },
+            "2024年度": {
+              "nCategories": 5,
+              "topShare": 0.9378997971641762,
+              "minorityShare": 0.06210020283582385,
+              "effectiveCategories": 1.1335548844850172,
+              "weightedMarginDispersion": 0.0073821679735320625
+            }
+          }
+        },
+        "redundantWith": "trade_mode_contract"
+      },
+      {
+        "key": "domestic_export",
+        "label": "内销/外销",
+        "column": "内销/外销",
+        "role": "entity",
+        "confidence": "low",
+        "recommendation": "not_recommended",
+        "reasons": [
+          "2023年度 最大类收入占比 99.1%，接近单极",
+          "2023年度 非最大类收入仅 0.9%",
+          "2023年度 收入有效类目数 1.02",
+          "2023年度 毛利率加权离散 0.19pp，解释力不足",
+          "2024年度 最大类收入占比 99.6%，接近单极",
+          "2024年度 非最大类收入仅 0.4%",
+          "2024年度 收入有效类目数 1.01",
+          "2024年度 毛利率加权离散 0.07pp，解释力不足"
+        ],
+        "metrics": {
+          "nCategories": 2,
+          "missingRate": 0.0,
+          "topShareByRows": 0.9676,
+          "minorityShareByRows": 0.0324,
+          "effectiveCategoriesByRows": 1.067,
+          "uniqueRatio": 0.0003,
+          "topShareByRevenue": 0.9965,
+          "minorityShareByRevenue": 0.0035,
+          "effectiveCategoriesByRevenue": 1.007,
+          "weightedMarginDispersionByRevenue": 0.001856,
+          "periodsByRevenue": {
+            "2023年度": {
+              "nCategories": 2,
+              "topShare": 0.9913499100362175,
+              "minorityShare": 0.00865008996378247,
+              "effectiveCategories": 1.0174498052549898,
+              "weightedMarginDispersion": 0.0018555176913958725
+            },
+            "2024年度": {
+              "nCategories": 2,
+              "topShare": 0.9964526048346026,
+              "minorityShare": 0.003547395165397371,
+              "effectiveCategories": 1.007119957717774,
+              "weightedMarginDispersion": 0.0006635196111434132
+            }
+          }
+        }
+      }
+    ]
+  },
+  "dimension_candidates": [
+    {
+      "key": "season",
+      "label": "销售季节",
+      "column": "销售季节",
+      "role": "slice",
+      "confidence": "high",
+      "recommendation": "recommended",
+      "reasons": [
+        "时间切片维度：只做汇总和导出，不做象限 / 迁移"
+      ],
+      "metrics": {
+        "nCategories": 4,
+        "missingRate": 0.0,
+        "topShareByRows": 0.2763,
+        "minorityShareByRows": 0.7237,
+        "effectiveCategoriesByRows": 3.956,
+        "uniqueRatio": 0.0006,
+        "topShareByRevenue": 0.2909,
+        "minorityShareByRevenue": 0.7091,
+        "effectiveCategoriesByRevenue": 3.918,
+        "weightedMarginDispersionByRevenue": 0.017119,
+        "periodsByRevenue": {
+          "2023年度": {
+            "nCategories": 4,
+            "topShare": 0.29089217599262407,
+            "minorityShare": 0.7091078240073759,
+            "effectiveCategories": 3.9372465088934367,
+            "weightedMarginDispersion": 0.017118864788165336
+          },
+          "2024年度": {
+            "nCategories": 4,
+            "topShare": 0.27634256363192833,
+            "minorityShare": 0.7236574363680717,
+            "effectiveCategories": 3.9176593312585766,
+            "weightedMarginDispersion": 0.014842318772479622
+          }
+        }
+      }
+    },
+    {
+      "key": "trade_mode_contract",
+      "label": "贸易方式（根据合同条款）",
+      "column": "贸易方式（根据合同条款）",
+      "role": "entity",
+      "confidence": "medium",
+      "recommendation": "needs_reason",
+      "reasons": [
+        "列名命中分类维度关键词",
+        "缺失 3.2% 的行会归入“未填”",
+        "2023年度 最大类收入占比 77.0%，需要一句业务理由",
+        "2023年度 收入有效类目数偏低 1.60",
+        "2024年度 收入有效类目数偏低 2.24"
+      ],
+      "metrics": {
+        "nCategories": 3,
+        "missingRate": 0.0324,
+        "topShareByRows": 0.8041,
+        "minorityShareByRows": 0.1959,
+        "effectiveCategoriesByRows": 1.496,
+        "uniqueRatio": 0.0005,
+        "topShareByRevenue": 0.7704,
+        "minorityShareByRevenue": 0.2296,
+        "effectiveCategoriesByRevenue": 1.596,
+        "weightedMarginDispersionByRevenue": 0.027782,
+        "periodsByRevenue": {
+          "2023年度": {
+            "nCategories": 4,
+            "topShare": 0.7704050911400309,
+            "minorityShare": 0.22959490885996914,
+            "effectiveCategories": 1.5959209206605611,
+            "weightedMarginDispersion": 0.027781550865551563
+          },
+          "2024年度": {
+            "nCategories": 4,
+            "topShare": 0.5240196665522938,
+            "minorityShare": 0.4759803334477062,
+            "effectiveCategories": 2.2401987451274716,
+            "weightedMarginDispersion": 0.014115516467066838
+          }
+        }
+      }
+    },
+    {
+      "key": "trade_mode_export",
+      "label": "贸易方式（外销）",
+      "column": "贸易方式（外销）",
+      "role": "entity",
+      "confidence": "low",
+      "recommendation": "not_recommended",
+      "reasons": [
+        "列名命中分类维度关键词",
+        "缺失 3.8% 的行会归入“未填”",
+        "最大类按行数占 94.4%，接近单极",
+        "有效类目数仅 1.12",
+        "与“贸易方式（根据合同条款）”近似重复，保留缺失更少的列"
+      ],
+      "metrics": {
+        "nCategories": 5,
+        "missingRate": 0.0377,
+        "topShareByRows": 0.9443,
+        "minorityShareByRows": 0.0557,
+        "effectiveCategoriesByRows": 1.118,
+        "uniqueRatio": 0.0008,
+        "topShareByRevenue": 0.9456,
+        "minorityShareByRevenue": 0.0544,
+        "effectiveCategoriesByRevenue": 1.116,
+        "weightedMarginDispersionByRevenue": 0.007808,
+        "periodsByRevenue": {
+          "2023年度": {
+            "nCategories": 5,
+            "topShare": 0.9455899427962158,
+            "minorityShare": 0.05441005720378422,
+            "effectiveCategories": 1.116317492702228,
+            "weightedMarginDispersion": 0.007808043142802947
+          },
+          "2024年度": {
+            "nCategories": 5,
+            "topShare": 0.9378997971641762,
+            "minorityShare": 0.06210020283582385,
+            "effectiveCategories": 1.1335548844850172,
+            "weightedMarginDispersion": 0.0073821679735320625
+          }
+        }
+      },
+      "redundantWith": "trade_mode_contract"
+    },
+    {
+      "key": "domestic_export",
+      "label": "内销/外销",
+      "column": "内销/外销",
+      "role": "entity",
+      "confidence": "low",
+      "recommendation": "not_recommended",
+      "reasons": [
+        "2023年度 最大类收入占比 99.1%，接近单极",
+        "2023年度 非最大类收入仅 0.9%",
+        "2023年度 收入有效类目数 1.02",
+        "2023年度 毛利率加权离散 0.19pp，解释力不足",
+        "2024年度 最大类收入占比 99.6%，接近单极",
+        "2024年度 非最大类收入仅 0.4%",
+        "2024年度 收入有效类目数 1.01",
+        "2024年度 毛利率加权离散 0.07pp，解释力不足"
+      ],
+      "metrics": {
+        "nCategories": 2,
+        "missingRate": 0.0,
+        "topShareByRows": 0.9676,
+        "minorityShareByRows": 0.0324,
+        "effectiveCategoriesByRows": 1.067,
+        "uniqueRatio": 0.0003,
+        "topShareByRevenue": 0.9965,
+        "minorityShareByRevenue": 0.0035,
+        "effectiveCategoriesByRevenue": 1.007,
+        "weightedMarginDispersionByRevenue": 0.001856,
+        "periodsByRevenue": {
+          "2023年度": {
+            "nCategories": 2,
+            "topShare": 0.9913499100362175,
+            "minorityShare": 0.00865008996378247,
+            "effectiveCategories": 1.0174498052549898,
+            "weightedMarginDispersion": 0.0018555176913958725
+          },
+          "2024年度": {
+            "nCategories": 2,
+            "topShare": 0.9964526048346026,
+            "minorityShare": 0.003547395165397371,
+            "effectiveCategories": 1.007119957717774,
+            "weightedMarginDispersion": 0.0006635196111434132
+          }
+        }
+      }
+    }
+  ],
+  "warnings": [
+    "候选维度“贸易方式（外销）”不建议直接加入：列名命中分类维度关键词；缺失 3.8% 的行会归入“未填”；最大类按行数占 94.4%，接近单极；有效类目数仅 1.12；与“贸易方式（根据合同条款）”近似重复，保留缺失更少的列",
+    "候选维度“内销/外销”不建议直接加入：2023年度 最大类收入占比 99.1%，接近单极；2023年度 非最大类收入仅 0.9%；2023年度 收入有效类目数 1.02；2023年度 毛利率加权离散 0.19pp，解释力不足；2024年度 最大类收入占比 99.6%，接近单极；2024年度 非最大类收入仅 0.4%；2024年度 收入有效类目数 1.01；2024年度 毛利率加权离散 0.07pp，解释力不足"
+  ]
+}
