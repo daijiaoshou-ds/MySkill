@@ -1,0 +1,10 @@
+[project]
+name = "audit-basis-sense"
+version = "0.1.0"
+description = "审计向量空间分析与基变换优化 Skill — 用时间复杂度 + 向量空间 + 信息熵降低审计底稿处理成本"
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
