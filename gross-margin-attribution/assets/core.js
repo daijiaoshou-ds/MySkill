@@ -392,7 +392,13 @@
     });
 
     var entityDims = DIM_LIST.filter(function (d) { return d.role !== 'order'; });
-    var quadDims = DIM_LIST.filter(function (d) { return d.role !== 'order' && d.role !== 'slice'; });
+    // 二维象限固定订单 / 客户 / 产品三层；动态维度只进入“具体变动数据”，不改象限 tab。
+    // 没有真实订单号时，行号订单没有下钻意义，隐藏订单层。
+    var quadDims = [];
+    ['order', 'customer', 'product'].forEach(function (key) {
+      var d = DIMS[key];
+      if (d && !(key === 'order' && d.synthetic)) quadDims.push(d);
+    });
     var primaryDim = (D.meta && D.meta.primaryDim) || (entityDims[0] && entityDims[0].key) || DIM_LIST[0].key;
     return {
       totals: totals, rows: rows, byDim: byDim, checks: checks,

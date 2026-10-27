@@ -30,7 +30,7 @@ description: 把任意 XLSX/CSV 销售明细做成毛利率归因工作台：识
 - **不写死字段、期间、维度、客户名、产品名。** 所有列名来自 `schema.json` + `mapping.json`。
 - **不跳过字段确认。** 程序给出 `suggested_mapping`，AI 必须看 samples、类型、缺失、唯一值，再写 `mapping.json`。
 - **必须有数量和两个期间。** 没有数量就不要硬做单价 × 成本象限；先向用户确认。两期总数量为 0 时 `prepare.py` 会报错，不会静默把 P0/C0 置 0。
-- **空维度是开放的，但不是“能拆就拆”。** 客户、产品不是硬编码的两个 tab；地区、渠道等通过 `mapping.dimensions` 增加。先用 `dimension_candidates` 看分布、缺失率和解释力，再决定加不加。
+- **空维度是开放的，但不是“能拆就拆”。** “具体变动数据”的维度 tab 不是硬编码的两个；地区、渠道等通过 `mapping.dimensions` 增加。二维象限固定为订单 / 客户 / 产品，不随空维度扩张。先用 `dimension_candidates` 看分布、缺失率和解释力，再决定加不加。
 - **页面 2 位小数，导出 6 位小数。** 不要用 2 位小数导出，否则小值会变成 0。
 - **HTML 工作台按页面约定显示 %；报告和 analysis.json 用 pp。** 页面里的毛利变化、拉力、价格拉力、成本拉力、成本率变化都显示成 %，这是工作台的阅读习惯；技术口径和报告仍用 pp，不要把页面标签当成统计单位。`analysis.json` / `data.json` 里的拉力是小数，`0.0191` 就是 `1.91pp`。
 - **报告只写 analysis.json 能支撑的事实。** 不编业务原因。
@@ -110,7 +110,7 @@ $PY $SKILL/scripts/inspect_schema.py "$INPUT" --out work/schema.json
 ]
 ```
 
-可以加 0 个、1 个或多个。页面会自动生成“客户 / 产品 / 地区 / 渠道”等切换 tab 和象限层级，不需要改代码。
+可以加 0 个、1 个或多个。页面会自动生成“客户 / 产品 / 地区 / 渠道”等维度切换 tab 和导出列；二维象限固定为“订单 / 客户 / 产品”，不需要改代码。
 
 ### 空维度的两段式门槛
 
@@ -126,7 +126,7 @@ $PY $SKILL/scripts/inspect_schema.py "$INPUT" --out work/schema.json
 
 - 客户 / 产品是固有实体维度，不受这套门槛约束，产品长尾也要保留。
 - 不达标的维度默认 `not_recommended`，但**不自动删**；用户坚持要加，必须在 `mapping.dimensions[].reason` 写一句可执行的理由。
-- `role: "slice"` 用于季度、月份、销售季节等时间切片：只做汇总 tab 和导出列，不做象限 / 迁移。
+- `role: "slice"` 用于季度、月份、销售季节等时间切片：只做汇总 tab 和导出列，不进二维象限 / 迁移。
 - 默认只告警；加 `--strict-dims` 时，`not_recommended` 或 `needs_reason` 且没有 `reason` 会直接失败。
 
 ## Step 3：跑分析

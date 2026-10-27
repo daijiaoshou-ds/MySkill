@@ -1192,7 +1192,15 @@
       '<span><i class="mig-line-mark"></i>连线 = 升降方向</span>';
     var note = '共 ' + parents.length + ' 个对象；四象限占比按当期总收入计算，' +
       '占比变化单位为 %。下方路径表解释占比为什么此消彼长。';
-    if (level === 'order') note += ' 订单号不跨期，订单层的“新增 / 流失”是单期订单，不是同一订单搬家。';
+    if (level === 'order') {
+      var op = D.meta && D.meta.quality && D.meta.quality.orderPeriods;
+      if (op && op.crossPeriod > 0) {
+        note += ' 有 ' + op.crossPeriod.toLocaleString('zh-CN') +
+          ' 个订单号两期都出现；其余“新增 / 流失”是单期订单。';
+      } else {
+        note += ' 没有订单号跨期；订单层“新增 / 流失”都是单期订单。';
+      }
+    }
     $('#quad-note').textContent = note;
     $('#quad-chart').innerHTML = migrationCallout(cc, flows, level) + migrationSvg(cc);
     $('#quad-table').innerHTML = migrationPathBlock(flows);
